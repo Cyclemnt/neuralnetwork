@@ -11,7 +11,7 @@ This project was built as an educational exploration into the fundamental mechan
 
 ---
 
-## 🎯 Highlights
+## Highlights
 
 - **Pure C++ (Zero Dependencies)**: Written using solely the C++ Standard Library (`<vector>`, `<cmath>`, `<random>`, `<unordered_map>`). No BLAS, Eigen, PyTorch, or TensorFlow.
 - **Fully Connected Architecture**: Modular design separating `Neuron`, `Layer`, and `Network` components with arbitrary depth and layer dimensions.
@@ -26,7 +26,7 @@ This project was built as an educational exploration into the fundamental mechan
 
 ---
 
-## 🏗️ Architecture & Project Structure
+## Project Structure
 
 ```text
 neuralnetwork/
@@ -46,21 +46,9 @@ neuralnetwork/
     └── neuron.cpp        # Neuron computation & weight initialization
 ```
 
-### Class Hierarchy & Flow
-
-```mermaid
-flowchart TD
-    Network -->|contains 1..*| Layer
-    Layer -->|contains 1..*| Neuron
-    Neuron -->|uses| ActivationFunction
-    Neuron -->|updates via| Optimizer
-    Optimizer <|-- SGD
-    Optimizer <|-- Adam
-```
-
 ---
 
-## 🚀 Quick Start
+## Getting Started
 
 ### Prerequisites
 
@@ -71,7 +59,7 @@ flowchart TD
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/neuralnetwork.git
+git clone https://github.com/Cyclemnt/neuralnetwork.git
 cd neuralnetwork
 
 # 2. Configure build with CMake
@@ -86,7 +74,7 @@ cmake --build build
 
 ---
 
-## 💡 Code Example
+## Code Example
 
 Creating and training a network is straightforward and intuitive:
 
@@ -112,7 +100,7 @@ std::vector<float> prediction = net.predict({0.5f, 0.25f});
 
 ---
 
-## 📊 Demo: Learning 4-Bit Arithmetic Addition
+## Demo: Learning 4-Bit Arithmetic Addition
 
 The included [`src/main.cpp`](src/main.cpp) demonstrates the network learning arithmetic addition from scratch:
 
@@ -128,18 +116,6 @@ The network learns the continuous linear mapping through non-linear activations 
 
 ---
 
-## 🔮 Future Enhancements
-
-Potential extensions to this project:
-- [ ] Matrix-based SIMD / vectorized operations for high-speed forward/backward passes.
-- [ ] Mini-batch gradient descent.
-- [ ] Additional loss functions (Mean Squared Error, Binary Cross-Entropy, Categorical Cross-Entropy).
-- [ ] Softmax activation and MNIST digit recognition benchmark.
-- [ ] Model serialization (saving and loading trained weights to JSON or binary).
-
----
-
-## 📄 License
+## License
 
 This project is open-source and available under the [MIT License](LICENSE).
-
